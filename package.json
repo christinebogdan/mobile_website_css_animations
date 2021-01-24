@@ -1,0 +1,19 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinebogdan/mobile_website_css_animations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinebogdan/mobile_website_css_animations/issues"
+  },
+  "homepage": "https://github.com/christinebogdan/mobile_website_css_animations#readme"
+}
