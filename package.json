@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css ./menus/sass/main.scss:./css/style_menu.css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/christinebogdan/mobile_website_css_animations/issues"
   },
-  "homepage": "https://github.com/christinebogdan/mobile_website_css_animations#readme"
+  "homepage": "https://github.com/christinebogdan/mobile_website_css_animations#readme",
+  "dependencies": {}
 }
