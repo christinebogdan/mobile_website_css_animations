@@ -1,1 +1,266 @@
-$color: blue;
+@import "./resets";
+@import "../scss/fontawesome.scss";
+@import "../scss/regular.scss";
+@import "../scss/solid.scss";
+
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+
+$font-logo-titles: "Shrikhand", cursive;
+$font-text: "Roboto", sans-serif;
+
+$tablet: 700px;
+$desktop: 980px;
+
+$background-colors: (
+  "white": white,
+  "grey": #e5e5e5,
+  "grey-light": #f4f4f4,
+  "grey-dark": #282828,
+  "secondary-light": #f2e7ff,
+);
+
+$font-weight: (
+  "extra-thin": 100,
+  "thin": 200,
+  "regular": 300,
+  "bold": 400,
+  "extra-bold": 500,
+);
+
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+@function backgroundColor($color) {
+  @return map-get($background-colors, $color);
+}
+
+@mixin grid-template($columns, $rows) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+@mixin flex-container(
+  $flex-direction,
+  $justify-content,
+  $align-items,
+  $align-content
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+
+@mixin font-style(
+  $weight,
+  $map,
+  $size: 1em,
+  $text-align: left,
+  $color: inherit
+) {
+  font-weight: weight($weight);
+  font-size: $size;
+  text-align: $text-align;
+  color: $color;
+}
+
+@mixin padding-left-right($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin padding-top-bottom($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin mobile {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+// --- BODY & OVERALL --- //
+
+.body {
+  @include grid-template(auto, repeat(3, auto));
+  font-family: $font-text;
+}
+
+.header,
+.intro,
+.how-to,
+.restaurants,
+.footer {
+  @include padding-left-right(20px, 20px);
+}
+
+.h1,
+.h2 {
+  font-size: 1.4em;
+}
+
+.btn {
+  border-radius: 30px;
+  @include padding-top-bottom(15px, 15px);
+  @include font-style(bold, $font-weight, 0.938em, inherit, $color: white);
+  width: 210px;
+  border: none;
+  background: linear-gradient(170deg, $color-secondary, $color-primary);
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 8px
+    scale-color(backgroundColor(grey-light), $lightness: -6%);
+}
+
+// --- HEADER --- //
+.header {
+  background-color: backgroundColor("white");
+  @include padding-top-bottom(20px, 10px);
+  margin: auto;
+  & img {
+    width: 165px;
+  }
+}
+
+// --- LOCATION --- //
+.location {
+  background-color: scale-color(backgroundColor(grey-light), $lightness: -6%);
+  @include font-style(bold, $font-weight, 1em, center);
+  @include padding-top-bottom(15px, 15px);
+  @include flex-container(row, space-around, center, center);
+  position: relative;
+  box-shadow: inset 0 7px 9px -7px rgba(43, 31, 31, 0.4);
+  &__name {
+    position: relative;
+  }
+  &__icon {
+    position: absolute;
+    left: -30px;
+  }
+}
+
+// --- INTRO --- //
+.intro {
+  background-color: backgroundColor(grey-light);
+  @include padding-top-bottom(40px, 50px);
+  @include padding-left-right(20px, 20px);
+  @include font-style(thin, $font-weight, 1.1em, center, backgroundColor(grey));
+  &__headline {
+    margin-bottom: 35px;
+  }
+  &__paragraph {
+    margin-bottom: 30px;
+  }
+}
+
+// --- HOW-TO --- //
+.how-to {
+  @include padding-top-bottom(40px, 60px);
+  @include font-style(bold, $font-weight, 1em);
+  &__headline {
+    margin-bottom: 20px;
+  }
+  &__flex-wrapper {
+    @include grid-template(auto, repeat(3, auto));
+  }
+  &__steps {
+    @include flex-container(row, flex-start, center, center);
+    position: relative;
+  }
+  &__steps + &__steps {
+    margin-top: 20px;
+  }
+  &__steps--num {
+    @include flex-container(row, space-around, center, center);
+    border-radius: 30px;
+    background-color: $color-primary;
+    color: white;
+    font-size: 0.9em;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+  }
+  &__step {
+    border-radius: 25px;
+    @include flex-container(row, flex-start, center, center);
+    background-color: backgroundColor(grey-light);
+    margin-left: 12px;
+    padding-right: 15px;
+    height: 75px;
+    flex-grow: 1;
+    &--icon {
+      display: block;
+      color: grey;
+      font-size: 1.25em;
+      @include padding-left-right(30px, 40px);
+    }
+    &--highlighted {
+      background-color: backgroundColor(secondary-light);
+    }
+    &--highlighted .how-to__step--icon {
+      color: $color-primary;
+    }
+  }
+}
+
+// --- RESTAURANTS --- //
+.restaurants {
+  background-color: backgroundColor(grey-light);
+  @include padding-top-bottom(40px, 50px);
+  &__headline {
+    margin-bottom: 15px;
+  }
+  &__grid-wrapper {
+    @include grid-template(auto, repeat(4, auto));
+  }
+}
+
+.restaurant {
+  @include flex-container(row, space-between, flex-start, center);
+  font-family: $font-text;
+  &__name {
+    @include font-style(bold, $font-weight, 1.063em);
+    margin-bottom: 5px;
+  }
+  &__location {
+    @include font-style(thin, $font-weight);
+  }
+  & .fa-heart {
+    font-size: 1.438em;
+    display: block;
+  }
+}
+
+// --- FOOTER --- //
+.footer {
+  background-color: backgroundColor(grey-dark);
+  @include padding-top-bottom(20px, 25px);
+  @include font-style(bold, $font-weight, 0.938em, inherit, white);
+  &__logo {
+    font-family: $font-logo-titles;
+    font-size: 1.036em;
+    color: white;
+    margin-bottom: 15px;
+  }
+  &__link + &__link {
+    margin-top: 7px;
+  }
+  &__link--1::before {
+    @extend .fas;
+    content: fa-content($fa-var-utensils);
+    width: 20px;
+  }
+  &__link--2::before {
+    @extend .fas;
+    content: fa-content($fa-var-hands-helping);
+    width: 20px;
+    font-size: 0.813em;
+  }
+}
