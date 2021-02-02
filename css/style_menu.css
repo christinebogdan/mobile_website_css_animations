@@ -1,10 +1,4 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  box-sizing: border-box;
-  padding: 0;
-}
-
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -6114,270 +6108,168 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .body {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(3, auto);
   font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.main {
+  background-color: #f4f4f4;
+  border-radius: 50px 50px 0 0;
+}
+
+.positioning-main-footer {
+  position: absolute;
+  width: 100%;
+  top: 270px;
 }
 
 .header,
-.intro,
-.how-to,
-.restaurants,
+.menu,
 .footer {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.h1,
-.h2 {
-  font-size: 1.4em;
+.entrees,
+.main-dish,
+.desserts {
+  width: 100%;
+}
+
+.h1 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+}
+
+.h1 {
+  font-family: "Shrikhand", cursive;
 }
 
 .btn {
-  border-radius: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 400;
   font-size: 0.938em;
-  text-align: inherit;
+  text-align: center;
   color: white;
-  width: 210px;
+  border-radius: 30px;
+  width: 170px;
   border: none;
   background: linear-gradient(170deg, #ff79da, #9356dc);
+  margin: auto;
+  margin-top: 50px;
 }
 
 .box-shadow {
   box-shadow: 5px 5px 8px #e5e5e5;
 }
 
-.spin {
-  background-color: rgba(22, 6, 2, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation-name: fade;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  z-index: 100;
-}
-.spin__items {
-  position: relative;
-  height: 12px;
-  width: 30px;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.7;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.spin__items .item {
-  position: absolute;
-  height: 8px;
-  width: 8px;
-  background-color: #ff79da;
-  border-radius: 50%;
-  animation-name: jump;
-  animation-duration: 1s;
-  animation-iteration-count: 3;
-  animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-}
-.spin__items .item:nth-child(1) {
-  animation-delay: 0;
-  left: 0;
-  bottom: 0;
-}
-.spin__items .item:nth-child(2) {
-  animation-delay: 0.2s;
-  left: 10px;
-  bottom: 0;
-}
-.spin__items .item:nth-child(3) {
-  animation-delay: 0.4s;
-  left: 20px;
-  bottom: 0;
-}
-
-@keyframes jump {
-  from {
-    bottom: 0px;
-  }
-  50% {
-    bottom: 4px;
-  }
-  90%, 100% {
-    bottom: 0px;
-  }
-}
 .header {
-  background-color: white;
   padding-top: 20px;
   padding-bottom: 10px;
-  margin: auto;
+  text-align: center;
+  position: relative;
+}
+.header .return-icon {
+  color: black;
+}
+.header .fas, .header .footer__link--2::before, .header .footer__link--1::before {
+  position: absolute;
+  font-size: 1.4em;
+  top: 20px;
+  left: 20px;
 }
 .header img {
   width: 165px;
 }
 
-.location {
-  background-color: #e5e5e5;
-  font-weight: 400;
-  font-size: 1em;
-  text-align: center;
-  color: inherit;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.hero-img {
+  background-image: url("/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -10;
+}
+
+.menu {
+  padding-top: 40px;
+  padding-bottom: 80px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  position: relative;
-  box-shadow: inset 0 7px 9px -7px rgba(43, 31, 31, 0.4);
+  align-items: flex-start;
+  align-content: flex-start;
+  border-radius: 30px 30px 0 0;
 }
-.location__name {
-  position: relative;
-}
-.location__icon {
-  position: absolute;
-  left: -30px;
-}
-
-.intro {
-  background-color: #f4f4f4;
-  padding-top: 40px;
-  padding-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-weight: 200;
-  font-size: 1.1em;
-  text-align: center;
-}
-.intro__headline {
-  margin-bottom: 35px;
-}
-.intro__paragraph {
-  margin-bottom: 30px;
-}
-
-.how-to {
-  padding-top: 40px;
-  padding-bottom: 60px;
-  font-weight: 400;
-  font-size: 1em;
-  text-align: left;
-  color: inherit;
-}
-.how-to__headline {
-  margin-bottom: 20px;
-}
-.how-to__flex-wrapper {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(3, auto);
-}
-.how-to__steps {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  position: relative;
-}
-.how-to__steps + .how-to__steps {
-  margin-top: 20px;
-}
-.how-to__steps--num {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  border-radius: 30px;
-  background-color: #9356dc;
-  color: white;
-  font-size: 0.9em;
-  position: absolute;
-  height: 25px;
-  width: 25px;
-}
-.how-to__step {
-  border-radius: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  background-color: #f4f4f4;
-  margin-left: 12px;
-  padding-right: 15px;
-  height: 75px;
-  flex-grow: 1;
-}
-.how-to__step--icon {
-  display: block;
-  color: grey;
-  font-size: 1.25em;
-  padding-left: 30px;
-  padding-right: 40px;
-}
-.how-to__step--highlighted {
-  background-color: #f2e7ff;
-}
-.how-to__step--highlighted .how-to__step--icon {
-  color: #9356dc;
-}
-
-.restaurants {
-  background-color: #f4f4f4;
-  padding-top: 40px;
-  padding-bottom: 50px;
-}
-.restaurants__headline {
-  margin-bottom: 15px;
-}
-.restaurants__grid-wrapper {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(4, auto);
-}
-
-.restaurant {
+.menu__headline-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  align-content: center;
-  font-family: "Roboto", sans-serif;
+  align-items: baseline;
+  align-content: flex-start;
+  width: 100%;
 }
-.restaurant__name {
+.menu__headline-div .fa-heart {
+  font-size: 1.438em;
+  padding-right: 20px;
+}
+.menu--section + .menu--section {
+  margin-top: 40px;
+}
+.menu--section-name {
+  margin-bottom: 5px;
+  font-weight: 300;
+  font-size: 1.1em;
+  text-align: left;
+  color: grey;
+}
+.menu__hr {
+  margin-bottom: 15px;
+  border: 2px solid #99e2d0;
+  width: 50px;
+}
+
+.dish {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-start;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+.dish + .dish {
+  margin-top: 10px;
+}
+.dish--name {
   font-weight: 400;
   font-size: 1.063em;
   text-align: left;
   color: inherit;
   margin-bottom: 5px;
 }
-.restaurant__location {
-  font-weight: 200;
-  font-size: 1em;
+.dish--description {
+  font-weight: 300;
+  font-size: 0.905em;
   text-align: left;
   color: inherit;
 }
-.restaurant .fa-heart {
-  font-size: 1.438em;
-  display: block;
+.dish--price {
+  font-weight: 500;
+  font-size: 0.936;
+  text-align: left;
+  color: inherit;
 }
 
 .footer {
@@ -6408,4 +6300,4 @@ readers do not read off random characters that represent icons */
   font-size: 0.813em;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style_menu.css.map */
