@@ -39,9 +39,9 @@
       <!-- location and explore restaurants -->
       <section class="location">
         <!-- <i class="fas fa-map-marker-alt"></i> -->
-        <p class="location__name">
+        <h3 class="h3 location__name">
           <i class="fas fa-map-marker-alt location__icon"></i>Paris, Belleville
-        </p>
+        </h3>
       </section>
 
       <section class="intro">
@@ -49,9 +49,7 @@
         <p class="intro__paragraph">
           Discover top-of-the-art restaurants we picked for you
         </p>
-        <button class="btn btn__p--bold box-shadow">
-          Explore our restaurants
-        </button>
+        <button class="btn btn__p--bold">Explore our restaurants</button>
       </section>
 
       <!-- how it works -->
@@ -62,7 +60,7 @@
             <div class="how-to__steps--num">
               <p>1</p>
             </div>
-            <div class="how-to__step box-shadow">
+            <div class="how-to__step">
               <i class="fas fa-mobile-alt fa-fw how-to__step--icon"></i>
               <p>Choose a restaurant</p>
             </div>
@@ -71,7 +69,7 @@
             <div class="how-to__steps--num">
               <p>2</p>
             </div>
-            <div class="how-to__step box-shadow">
+            <div class="how-to__step">
               <i class="fas fa-list-ul fa-fw how-to__step--icon"></i>
               <p>Create your menu</p>
             </div>
@@ -80,7 +78,7 @@
             <div class="how-to__steps--num">
               <p>3</p>
             </div>
-            <div class="how-to__step how-to__step--highlighted box-shadow">
+            <div class="how-to__step how-to__step--highlighted">
               <i class="fas fa-store fa-fw how-to__step--icon"></i>
               <p>Go enjoy it at the restaurant</p>
             </div>
@@ -93,33 +91,56 @@
         <h2 class="restaurants__headline">Restaurants</h2>
         <div class="restaurants__grid-wrapper">
           <div class="restaurant">
-            <div>
-              <p class="restaurant__name">The Full Palette</p>
-              <p class="restaurant__location">New York</p>
-            </div>
-            <i class="far fa-heart"></i>
-          </div>
-
-          <div class="restaurant">
-            <div>
-              <p class="restaurant__name">The Enchanted Plate</p>
-              <p class="restaurant__location">New York</p>
-            </div>
-            <i class="far fa-heart"></i>
-          </div>
-          <div class="restaurant">
-            <div>
-              <p class="restaurant__name">Bastille</p>
-              <p class="restaurant__location">New York</p>
-            </div>
-            <i class="far fa-heart"></i>
+            <a class="anchor" href="menus/the-full-palette.html">
+              <div class="restaurant__img restaurant__img--1"></div>
+              <div class="flex-wrapper">
+                <div class="restaurant__description">
+                  <p class="restaurant__description--name">The Full Palette</p>
+                  <p class="restaurant__description--location">New York</p>
+                </div>
+                <div>
+                  <i class="fas fa-heart fill"></i>
+                </div>
+              </div>
+            </a>
           </div>
           <div class="restaurant">
-            <div>
-              <p class="restaurant__name">Le Gourmand</p>
-              <p class="restaurant__location">New York</p>
-            </div>
-            <i class="far fa-heart"></i>
+            <a class="anchor" href="menus/the-enchanted-plate.html">
+              <div class="restaurant__img restaurant__img--2"></div>
+              <div class="flex-wrapper">
+                <div class="restaurant__description">
+                  <p class="restaurant__description--name">
+                    The Enchanted Plate
+                  </p>
+                  <p class="restaurant__description--location">New York</p>
+                </div>
+                <i class="fas fa-heart"></i>
+              </div>
+            </a>
+          </div>
+          <div class="restaurant">
+            <a class="anchor" href="menus/bastille.html">
+              <div class="restaurant__img restaurant__img--3"></div>
+              <div class="flex-wrapper">
+                <div class="restaurant__description">
+                  <p class="restaurant__description--name">Bastille</p>
+                  <p class="restaurant__description--location">New York</p>
+                </div>
+                <i class="fas fa-heart"></i>
+              </div>
+            </a>
+          </div>
+          <div class="restaurant">
+            <a class="anchor" href="menus/le-gourmand.html">
+              <div class="restaurant__img restaurant__img--4"></div>
+              <div class="flex-wrapper">
+                <div class="restaurant__description">
+                  <p class="restaurant__description--name">Le Gourmand</p>
+                  <p class="restaurant__description--location">New York</p>
+                </div>
+                <i class="fas fa-heart"></i>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -130,7 +151,11 @@
       <p class="footer__link footer__link--1">Suggest a restaurant</p>
       <p class="footer__link footer__link--2">Become a partner</p>
       <p class="footer__link">Legal</p>
-      <p class="footer__link">Contact</p>
+      <p class="footer__link">
+        <a class="footer__link--mailto" href="mailto:info@ohmyfood.com"
+          >Contact</a
+        >
+      </p>
     </footer>
   </body>
 </html>
