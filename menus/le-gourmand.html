@@ -3,80 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/style_gourmand.css" />
     <title>Le Gourmand</title>
   </head>
-  <body>
-    <!-- header logo and return arrow -->
-    <header>
+  <body class="body">
+    <!-- logo -->
+    <header class="header">
+      <a href="../index.html" class="return-icon">
+        <i class="fas fa-arrow-left"></i>
+      </a>
       <img
-        src="images/logo/ohmyfood@2x.svg"
+        class="header__img"
+        src="../images/logo/ohmyfood@2x.svg"
         alt="ohmyfood logo in the header"
       />
     </header>
-    <!-- Le Gourmand food image    -->
-    <div></div>
-    <!-- main part -->
-    <main>
-      <h1>Le Gourmand</h1>
-      <!-- section entrees -->
-      <section>
-        <p>ENTREES</p>
-        <div>
-          <p>Tuna Carpaccio</p>
-          <p>seasoned with yuzu</p>
-          <p>25€</p>
-        </div>
-        <div>
-          <p>Crunchy Lobster Croquets</p>
-          <p>with seasonal vegetables</p>
-          <p>35€</p>
-        </div>
-        <div>
-          <p>Mushroom Soup</p>
-          <p>with truffles</p>
-          <p>20€</p>
-        </div>
-      </section>
-      <!-- section main dish -->
-      <section>
-        <p>MAIN DISH</p>
-        <div>
-          <p>Roast Chicken with Provincal Herbs</p>
-          <p>with truffle cream</p>
-          <p>40€</p>
-        </div>
-        <div>
-          <p>Roasted Lobster</p>
-          <p>with seasonal vegetables</p>
-          <p>35€</p>
-        </div>
-        <div>
-          <p>Angus Beef Ribs</p>
-          <p>with mashed parsnips</p>
-          <p>44€</p>
-      </section>
-      <!-- section desserts -->
-      <section>
-        <p>DESSERTS</p>
-        <div>
-          <p>Assorted Dessert Plate</p>
-          <p>Chef's choice</p>
-          <p>18€</p>
-        </div>
-        <div>
-          <p>Crème brulée</p>
-          <p>Revisited</p>
-          <p>22€</p>
-        </div>
-        <div>
-          <p>Tiramisu</p>
-          <p>with hazelnuts</p>
-          <p>23€</p>
-      </section>
-      <!-- Order button -->
-      <button>Order</button>
-    </main>
-    <!-- Footer -->
-    <footer></footer>
+    <!-- Bastille food image    -->
+    <div class="hero-img"></div>
+
+    <div class="positioning-main-footer">
+      <!-- main part -->
+      <main class="main">
+        <!-- menu -->
+        <section class="menu">
+          <div class="menu__headline">
+            <h1 class="h1">Le Gourmand</h1>
+            <i class="fas fa-heart"></i>
+          </div>
+          <!-- section entrees -->
+          <section class="entrees menu__section">
+            <h2 class="menu__section--name">ENTREES</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Tuna Carpaccio</p>
+                  <p class="dish__description">seasoned with yuzu</p>
+                </div>
+                <p class="dish__price">25€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Crunchy Lobster Croquets</p>
+                  <p class="dish__description">with seasonal vegetables</p>
+                </div>
+                <p class="dish__price">35€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Mushroom Soup</p>
+                  <p class="dish__description">with truffles</p>
+                </div>
+                <p class="dish__price">20€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- section main dish -->
+          <section class="main-dish menu__section">
+            <h2 class="menu__section--name">MAIN DISH</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Roast Chicken with Provincal Herbs</p>
+                  <p class="dish__description">with truffle cream</p>
+                </div>
+                <p class="dish__price">40€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Roasted Lobster</p>
+                  <p class="dish__description">with seasonal vegetables</p>
+                </div>
+                <p class="dish__price">35€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Angus Beef Ribs</p>
+                  <p class="dish__description">with mashed parsnips</p>
+                </div>
+                <p class="dish__price">44€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- section desserts -->
+          <section class="desserts menu__section">
+            <h2 class="menu__section--name">DESSERTS</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Assored Dessert Plate</p>
+                  <p class="dish__description">Chef's choice</p>
+                </div>
+                <p class="dish__price">18€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Crème brulée</p>
+                  <p class="dish__description">Revisited</p>
+                </div>
+                <p class="dish__price">22€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Tiramisu</p>
+                  <p class="dish__description">with hazelnuts</p>
+                </div>
+                <p class="dish__price">23€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- Order button -->
+          <button class="btn">Order</button>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__logo">ohmyfood</p>
+        <p class="footer__link footer__link--1">Suggest a restaurant</p>
+        <p class="footer__link footer__link--2">Become a partner</p>
+        <p class="footer__link">Legal</p>
+        <p class="footer__link">
+          <a class="footer__link--mailto" href="mailto:info@ohmyfood.com"
+            >Contact</a
+          >
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

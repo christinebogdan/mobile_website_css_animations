@@ -158,7 +158,7 @@ $font-weight: (
 }
 
 .hero-img {
-  background-image: url("/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-image: url("/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
   height: 260px;
   background-size: cover;
   background-position: center;
@@ -279,9 +279,9 @@ $font-weight: (
   &__name {
     @include font-style(bold, $font-weight, 1.063em);
     margin-bottom: 5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
   }
   &__description {
     @include font-style(regular, $font-weight, 0.905em);

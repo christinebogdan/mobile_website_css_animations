@@ -1,0 +1,327 @@
+@import "../../scss/fontawesome.scss";
+@import "../../scss/regular.scss";
+@import "../../scss/solid.scss";
+
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+
+$font-logo-titles: "Shrikhand", cursive;
+$font-text: "Roboto", sans-serif;
+
+$background-colors: (
+  "white": white,
+  "grey": #e5e5e5,
+  "grey-light": #f4f4f4,
+  "grey-dark": #282828,
+  "secondary-light": #f2e7ff,
+);
+
+$font-weight: (
+  "extra-thin": 100,
+  "thin": 200,
+  "regular": 300,
+  "bold": 400,
+  "extra-bold": 500,
+);
+
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+@function backgroundColor($color) {
+  @return map-get($background-colors, $color);
+}
+
+@mixin flex-container(
+  $flex-direction,
+  $justify-content,
+  $align-items: default,
+  $align-content: default
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+
+@mixin font-style(
+  $weight,
+  $map,
+  $size: 1em,
+  $text-align: left,
+  $color: inherit
+) {
+  font-weight: weight($weight);
+  font-size: $size;
+  text-align: $text-align;
+  color: $color;
+}
+
+@mixin padding-left-right($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin padding-top-bottom($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin box-shadow($lightness: -6%) {
+  box-shadow: 0px 4px 10px 3px
+    scale-color(backgroundColor(grey-light), $lightness: $lightness);
+}
+
+// --- BODY & OVERALL --- //
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: $font-text;
+  position: relative;
+}
+
+.main {
+  background-color: backgroundColor(grey-light);
+  border-radius: 50px 50px 0 0;
+}
+
+.positioning-main-footer {
+  position: absolute;
+  width: 100%;
+  top: 270px;
+}
+
+.header,
+.menu,
+.footer {
+  @include padding-left-right(20px, 20px);
+}
+
+.entrees,
+.main-dish,
+.desserts {
+  width: 100%;
+}
+
+.h1 {
+  font-size: 1.8em;
+  font-family: $font-logo-titles;
+}
+
+.btn {
+  @include padding-top-bottom(15px, 15px);
+  @include font-style(bold, $font-weight, 0.938em, center, $color: white);
+  @include box-shadow(-12%);
+  border-radius: 30px;
+  width: 170px;
+  border: none;
+  background: linear-gradient(170deg, $color-secondary, $color-primary);
+  margin: auto;
+  margin-top: 50px;
+  transition: background 1s, box-shadow 1.2s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: linear-gradient(
+      170deg,
+      lighten($color-secondary, 5%),
+      lighten($color-primary, 5%)
+    );
+    @include box-shadow(-24%);
+  }
+}
+
+// --- HEADER AND HERO IMG --- //
+.header {
+  background-color: backgroundColor(white);
+  @include padding-top-bottom(20px, 10px);
+  text-align: center;
+  position: relative;
+  & .return-icon {
+    color: black;
+  }
+  & .fas {
+    position: absolute;
+    font-size: 1.4em;
+    top: 20px;
+    left: 20px;
+  }
+  & img {
+    width: 165px;
+  }
+}
+
+.hero-img {
+  background-image: url("/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -10;
+}
+
+// --- MENU --- //
+.menu {
+  @include padding-top-bottom(40px, 80px);
+  @include flex-container(column, space-around, flex-start, flex-start);
+  &__headline {
+    @include flex-container(row, space-between, baseline, flex-start);
+    width: 100%;
+    margin-bottom: 30px;
+    & .fa-heart {
+      font-size: 1.438em;
+      padding-right: 20px;
+      // NEU DAZU > FAR wird FAS im MARKUP //
+      -webkit-text-stroke: 1px black;
+      color: backgroundColor(grey-light);
+      &:hover {
+        background: -webkit-linear-gradient(
+          80deg,
+          $color-secondary,
+          $color-primary
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0px;
+      }
+    }
+  }
+  border-radius: 30px 30px 0 0;
+  &__section + &__section {
+    margin-top: 40px;
+  }
+  &__section--name {
+    margin-bottom: 5px;
+    @include font-style(regular, $font-weight, 1.1em, left, grey);
+  }
+  &__hr {
+    margin-bottom: 15px;
+    border: 2px solid $color-tertiary;
+    width: 50px;
+  }
+  &__section {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    &.entrees {
+      animation-delay: 0.4s;
+    }
+    &.main-dish {
+      animation-delay: 0.7s;
+    }
+    &.desserts {
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.dish {
+  display: flex;
+  @include box-shadow();
+  border-radius: 20px;
+  background-color: backgroundColor("white");
+  & + .dish {
+    margin-top: 10px;
+  }
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: 100%;
+    min-width: 0;
+    @include padding-top-bottom(12px, 12px);
+    @include padding-left-right(12px, 20px);
+    &--wrapper {
+      min-width: 0;
+    }
+    &:hover + &--animation {
+      width: 90px;
+      & .fa-check-circle {
+        transform: rotate(360deg);
+      }
+    }
+    &--animation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 15px 15px 0;
+      @include padding-top-bottom(12px, 12px);
+      background-color: $color-tertiary;
+      transition: width linear 0.6s;
+      overflow: hidden;
+      width: 0px;
+      & .fa-check-circle {
+        font-size: 1.5em;
+        text-align: center;
+        color: white;
+        transition: transform ease-in 0.6s;
+      }
+    }
+  }
+  &__name {
+    @include font-style(bold, $font-weight, 1.063em);
+    margin-bottom: 5px;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
+  }
+  &__description {
+    @include font-style(regular, $font-weight, 0.905em);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__price {
+    @include font-style(extra-bold, $font-weight, 0.936em);
+    margin-left: 15px;
+  }
+}
+
+// --- FOOTER --- //
+.footer {
+  background-color: backgroundColor(grey-dark);
+  @include padding-top-bottom(20px, 25px);
+  @include font-style(bold, $font-weight, 0.938em, inherit, white);
+  &__logo {
+    font-family: $font-logo-titles;
+    font-size: 1.036em;
+    color: white;
+    margin-bottom: 15px;
+  }
+  &__link + &__link {
+    margin-top: 7px;
+  }
+  &__link--1::before {
+    @extend .fas;
+    content: fa-content($fa-var-utensils);
+    width: 20px;
+  }
+  &__link--2::before {
+    @extend .fas;
+    content: fa-content($fa-var-hands-helping);
+    width: 20px;
+    font-size: 0.813em;
+  }
+  &__link--mailto {
+    @include font-style(bold, $font-weight, inherit, inherit, white);
+    text-decoration: none;
+  }
+}

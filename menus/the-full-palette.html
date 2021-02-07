@@ -3,80 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/style_palette.css" />
     <title>The Full Palette</title>
   </head>
-  <body>
-    <!-- header logo and return arrow -->
-    <header>
+  <body class="body">
+    <!-- logo -->
+    <header class="header">
+      <a href="../index.html" class="return-icon">
+        <i class="fas fa-arrow-left"></i>
+      </a>
       <img
-        src="images/logo/ohmyfood@2x.svg"
+        class="header__img"
+        src="../images/logo/ohmyfood@2x.svg"
         alt="ohmyfood logo in the header"
       />
     </header>
-    <!-- The Full Palette food image    -->
-    <div></div>
-    <!-- main part -->
-    <main>
-      <h1>The Food Palette</h1>
-      <!-- section entrees -->
-      <section>
-        <p>ENTREES</p>
-        <div>
-          <p>Escargot</p>
-          <p>with southern French spices</p>
-          <p>25€</p>
-        </div>
-        <div>
-          <p>Duck Foie Gras</p>
-          <p>with black truffle shavings</p>
-          <p>35€</p>
-        </div>
-        <div>
-          <p>Fried Egg</p>
-          <p>...</p>
-          <p>20€</p>
-        </div>
-      </section>
-      <!-- section main dish -->
-      <section>
-        <p>MAIN DISH</p>
-        <div>
-          <p>Herb-Encrusted Steak</p>
-          <p>with delicately sliced and seasoned veg...</p>
-          <p>40€</p>
-        </div>
-        <div>
-          <p>Ox Tail Shepard's Pie</p>
-          <p>with black truffle and pureed parsnips</p>
-          <p>35€</p>
-        </div>
-        <div>
-          <p>Filet of Sole</p>
-          <p>with citrus dressing</p>
-          <p>44€</p>
-      </section>
-      <!-- section desserts -->
-      <section>
-        <p>DESSERTS</p>
-        <div>
-          <p>Paris-Brest</p>
-          <p>Revisited</p>
-          <p>18€</p>
-        </div>
-        <div>
-          <p>Chocolate Macaroons</p>
-          <p>with vanilla ice cream</p>
-          <p>22€</p>
-        </div>
-        <div>
-          <p>Chocolate Mousse</p>
-          <p>with spices and black truffle</p>
-          <p>23€</p>
-      </section>
-      <!-- Order button -->
-      <button>Order</button>
-    </main>
-    <!-- Footer -->
-    <footer></footer>
+    <!-- Bastille food image    -->
+    <div class="hero-img"></div>
+
+    <div class="positioning-main-footer">
+      <!-- main part -->
+      <main class="main">
+        <!-- menu -->
+        <section class="menu">
+          <div class="menu__headline">
+            <h1 class="h1">The Full Palette</h1>
+            <i class="fas fa-heart"></i>
+          </div>
+          <!-- section entrees -->
+          <section class="entrees menu__section">
+            <h2 class="menu__section--name">ENTREES</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Escargot</p>
+                  <p class="dish__description">with southern French spcies</p>
+                </div>
+                <p class="dish__price">25€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Duck Foie Gras</p>
+                  <p class="dish__description">with black truffle shavings</p>
+                </div>
+                <p class="dish__price">35€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Fried Egg</p>
+                  <p class="dish__description">...</p>
+                </div>
+                <p class="dish__price">20€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- section main dish -->
+          <section class="main-dish menu__section">
+            <h2 class="menu__section--name">MAIN DISH</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Herb-Encrusted Steak</p>
+                  <p class="dish__description">
+                    with delicately sliced and seasoned vegetables
+                  </p>
+                </div>
+                <p class="dish__price">40€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Ox Tail Shepard's Pie</p>
+                  <p class="dish__description">
+                    with black truffles and pureed parsnips
+                  </p>
+                </div>
+                <p class="dish__price">35€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Filet of Sole</p>
+                  <p class="dish__description">with citrus dressing</p>
+                </div>
+                <p class="dish__price">44€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- section desserts -->
+          <section class="desserts menu__section">
+            <h2 class="menu__section--name">DESSERTS</h2>
+            <hr class="menu__hr" />
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Paris-Brest</p>
+                  <p class="dish__description">Revisited</p>
+                </div>
+                <p class="dish__price">18€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Chocolate Maracons</p>
+                  <p class="dish__description">with vanilla ice cream</p>
+                </div>
+                <p class="dish__price">22€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="dish">
+              <div class="dish__card">
+                <div class="dish__card--wrapper">
+                  <p class="dish__name">Chocolage Mousse</p>
+                  <p class="dish__description">with spices and black truffle</p>
+                </div>
+                <p class="dish__price">23€</p>
+              </div>
+              <div class="dish__card--animation">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </section>
+          <!-- Order button -->
+          <button class="btn">Order</button>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__logo">ohmyfood</p>
+        <p class="footer__link footer__link--1">Suggest a restaurant</p>
+        <p class="footer__link footer__link--2">Become a partner</p>
+        <p class="footer__link">Legal</p>
+        <p class="footer__link">
+          <a class="footer__link--mailto" href="mailto:info@ohmyfood.com"
+            >Contact</a
+          >
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

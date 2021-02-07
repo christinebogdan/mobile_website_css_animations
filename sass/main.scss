@@ -10,9 +10,6 @@ $color-tertiary: #99e2d0;
 $font-logo-titles: "Shrikhand", cursive;
 $font-text: "Roboto", sans-serif;
 
-$tablet: 700px;
-$desktop: 980px;
-
 $background-colors: (
   "white": white,
   "grey": #e5e5e5,
@@ -84,16 +81,23 @@ $font-weight: (
     scale-color(backgroundColor(grey-light), $lightness: $lightness);
 }
 
-@mixin mobile {
-  @media (max-width: $tablet) {
-    @content;
+@mixin responsive($size) {
+  @if $size == tablet {
+    @media (min-width: 700px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1300px) {
+      @content;
+    }
   }
 }
 
 // --- BODY & OVERALL --- //
 
 .body {
-  @include grid-template(auto, repeat(3, auto));
+  margin: auto;
+  max-width: 1400px;
   font-family: $font-text;
 }
 
@@ -103,6 +107,12 @@ $font-weight: (
 .restaurants,
 .footer {
   @include padding-left-right(20px, 20px);
+  @include responsive(tablet) {
+    @include padding-left-right(40px, 40px);
+  }
+  @include responsive(desktop) {
+    @include padding-left-right(70px, 70px);
+  }
 }
 
 .h1,
@@ -190,7 +200,7 @@ $font-weight: (
   animation-iteration-count: 3;
   animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
   &:nth-child(1) {
-    animation-delay: 0;
+    animation-delay: 0s;
     left: 0;
     bottom: 0;
   }
@@ -222,6 +232,7 @@ $font-weight: (
 // --- HEADER --- //
 .header {
   background-color: backgroundColor("white");
+  text-align: center;
   @include padding-top-bottom(20px, 10px);
   margin: auto;
   & img {
@@ -267,15 +278,26 @@ $font-weight: (
   &__headline {
     margin-bottom: 20px;
   }
-  &__grid-wrapper {
-    @include grid-template(auto, repeat(3, auto));
+
+  &__flex-wrapper {
+    @include flex-container(column, flex-start, stretch, flex-start);
+    @include responsive(desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
   &__steps {
     @include flex-container(row, flex-start, center, center);
     position: relative;
+    @include responsive(desktop) {
+      flex-basis: 32%;
+    }
   }
   &__steps + &__steps {
     margin-top: 20px;
+    @include responsive(desktop) {
+      margin-top: 0;
+    }
   }
   &__steps--num {
     @include flex-container(row, space-around, center, center);
@@ -315,21 +337,36 @@ $font-weight: (
 .restaurants {
   background-color: backgroundColor(grey-light);
   @include padding-top-bottom(40px, 50px);
+
   &__headline {
     margin-bottom: 15px;
   }
+
   &__flex-wrapper {
-    @include grid-template(auto, repeat(4, auto));
+    @include flex-container(column, flex-start, stretch, flex-start);
+    @include responsive(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }
 
 .restaurant {
   @include box-shadow(-12%);
+  @include responsive(tablet) {
+    flex-basis: 48%;
+    margin-bottom: 15px;
+  }
   background-color: backgroundColor("white");
   border-radius: 15px;
   font-family: $font-text;
   & + .restaurant {
     margin-top: 15px;
+    @include responsive(tablet) {
+      margin-top: 0;
+    }
   }
   & .flex-wrapper {
     @include flex-container(row, space-between, flex-start, center);

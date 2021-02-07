@@ -6191,7 +6191,7 @@ readers do not read off random characters that represent icons */
 }
 
 .hero-img {
-  background-image: url("/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-image: url("/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
   height: 260px;
   background-size: cover;
   background-position: center;
@@ -6324,9 +6324,6 @@ readers do not read off random characters that represent icons */
   text-align: left;
   color: inherit;
   margin-bottom: 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .dish__description {
   font-weight: 300;
@@ -6380,4 +6377,4 @@ readers do not read off random characters that represent icons */
   text-decoration: none;
 }
 
-/*# sourceMappingURL=style_menu.css.map */
+/*# sourceMappingURL=style_plate.css.map */
