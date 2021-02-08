@@ -240,6 +240,7 @@ $font-weight: (
   &__section {
     @include responsive(desktop) {
       flex-basis: 31%;
+      min-width: 0;
     }
     opacity: 0;
     animation-name: fadeIn;
