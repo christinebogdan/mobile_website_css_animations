@@ -178,7 +178,7 @@ $font-weight: (
 }
 
 .hero-img {
-  background-image: url("/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
   height: 260px;
   background-size: cover;
   background-position: center;
@@ -190,10 +190,18 @@ $font-weight: (
 .menu {
   @include padding-top-bottom(40px, 80px);
   @include flex-container(column, space-around, flex-start, flex-start);
+  @include responsive(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   &__headline {
     @include flex-container(row, space-between, baseline, flex-start);
     width: 100%;
     margin-bottom: 30px;
+    @include responsive(desktop) {
+      flex-basis: 100%;
+    }
     & .fa-heart {
       font-size: 1.438em;
       padding-right: 20px;
@@ -215,6 +223,9 @@ $font-weight: (
   border-radius: 30px 30px 0 0;
   &__section + &__section {
     margin-top: 40px;
+    @include responsive(desktop) {
+      margin-top: 0;
+    }
   }
 
   &__section--name {
@@ -227,6 +238,9 @@ $font-weight: (
     width: 50px;
   }
   &__section {
+    @include responsive(desktop) {
+      flex-basis: 31%;
+    }
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 1s;
