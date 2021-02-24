@@ -6453,6 +6453,7 @@ readers do not read off random characters that represent icons */
   padding-bottom: 15px;
 }
 .restaurant__img {
+  position: relative;
   background-size: cover;
   border-radius: 15px 15px 0 0;
   height: 200px;
@@ -6468,6 +6469,17 @@ readers do not read off random characters that represent icons */
 }
 .restaurant__img--4 {
   background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+.restaurant__new--label {
+  display: inline-block;
+  background-color: #99e2d0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 7px 28px;
+  color: #208461;
+  font-size: 0.925em;
+  border-radius: 3px;
 }
 .restaurant__description {
   display: flex;

@@ -373,7 +373,9 @@ $font-weight: (
     @include padding-left-right(15px, 25px);
     @include padding-top-bottom(15px, 15px);
   }
+
   &__img {
+    position: relative;
     background-size: cover;
     border-radius: 15px 15px 0 0;
     height: 200px;
@@ -389,6 +391,17 @@ $font-weight: (
     &--4 {
       background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
     }
+  }
+  &__new--label {
+    display: inline-block;
+    background-color: $color-tertiary;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 7px 28px;
+    color: #208461;
+    font-size: 0.925em;
+    border-radius: 3px;
   }
   &__description {
     @include flex-container(column, space-between, flex-start, center);
