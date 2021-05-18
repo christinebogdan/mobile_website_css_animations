@@ -51,10 +51,6 @@ The project objectives for the animation can be divided into **three parts**:
 
 ## Challenges
 
-**Challenge**: In Firefox, the placeholder text in the search input field did not have the right styling.
-
-**Solution**: Usage of --webkit-- and --moz--
-
 ## Demo
 
 [Link to website](https://christinebogdan.github.io/p2_OnlineFoodDeliveryWebsite/)
