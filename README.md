@@ -2,7 +2,7 @@
 
 ## Description
 
-Aim of the project was to **turn mockups into a webpage** and to create animations and transitions. Mockups for the Ohmyfood website were provided, as well as logo and images. In addition to building the site using HTML and CSS/SASS, it was required to create animations and transitions using CSS. The effects were provided in form of a short video.
+Aim of the project was to **turn mockups into a webpage** and to create animations and transitions. Mockups for the Ohmyfood website were provided, as well as logo and images. In addition to building the site using HTML and CSS/SCSS, it was required to create animations and transitions using CSS. The effects were provided in form of a short video.
 
 ## Objectives
 
@@ -43,7 +43,7 @@ The project objectives for the animation can be divided into **three parts**:
 
 - only CSS, no JavaScript for animations
 - no framework
-- use of Sass
+- use of SCSS
 - use of Google Fonts
 - must pass W3C validation for HTML and CSS without errors
 - must be fully responsive
