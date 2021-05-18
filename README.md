@@ -2,6 +2,10 @@
 
 ## Description
 
+Ohmyfood is an online food ordering website. Their concept allows users to compose their
+own menu and reduce waiting time in restaurants because they make their choice in
+advance.
+
 Aim of the project was to **turn mockups into a webpage** and to create animations and transitions. Mockups for the Ohmyfood website were provided, as well as logo and images. In addition to building the site using HTML and CSS/SCSS, it was required to create animations and transitions using CSS. The effects were provided in form of a short video.
 
 ## Objectives
