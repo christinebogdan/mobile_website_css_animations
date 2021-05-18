@@ -38,7 +38,7 @@ The project objectives for the animation can be divided into **three parts**:
    - loading spinner appears
 1. Buttons
    - on hover, background color lightens slightly and drop shadow becomes more visible
-   - on click, heart-shaped like buttonsfill up with gradient
+   - on click, heart-shaped like buttons fill up with gradient
 1. Menu pages
    - when arriving on page, dishes appear gradually with slight time lag, by group Starter, Main course and Dessert.
    - Hovering over menu items, small checkmarl appears to the right of the dish and slides in from right to left. If title of dish is too long, it's trimmed with suspension points.
@@ -53,7 +53,9 @@ The project objectives for the animation can be divided into **three parts**:
 - must be fully responsive
 - must be fully compatible with latest desktop versions of Chrome, Firefox and Safari (March 2021)
 
-## Challenges
+## Challenges & Achievements
+
+- build custom loading spinner
 
 ## Demo
 
