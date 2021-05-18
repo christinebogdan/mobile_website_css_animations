@@ -57,6 +57,12 @@ The project objectives for the animation can be divided into **three parts**:
 
 - build custom loading spinner
 
+## Acquired Skills
+
+- Develop a navigation structure for a website
+- Implement design effects using CSS & SCSS
+- Ensure design consistency on a website
+
 ## Demo
 
 [Link to website](https://christinebogdan.github.io/p2_OnlineFoodDeliveryWebsite/)
