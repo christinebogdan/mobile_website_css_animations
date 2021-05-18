@@ -1,8 +1,8 @@
-# Reservia | Travel Website
+# Ohmyfood | Online Food Delivery
 
 ## Description
 
-Aim of the project was to **turn mockups into a webpage**. Mockups for the Reservia Travel Website were provided for desktop and mobile, as well as a logo and all images. In addition to building the site, I had to make my own adaptions for a tablet layout and determine suitable breakpoints.
+Aim of the project was to **turn mockups into a webpage** and to create animations and transitions. Mockups for the Ohmyfood website were provided, as well as logo and images. In addition to building the site using HTML and CSS/SASS, it was required to create animations and transitions using CSS. The effects were provided in form of a short video.
 
 ## Objectives
 
@@ -26,6 +26,8 @@ The project objectives for the content can be divided into **four parts**:
 
 ### ANIMATIONS
 
+Effects must be accessible by clicking or hovering. They use CSS animations/transitions, no JavaScript or library is used.
+
 The project objectives for the animation can be divided into **three parts**:
 
 1. Homepage
@@ -48,6 +50,10 @@ The project objectives for the animation can be divided into **three parts**:
 - must be fully compatible with latest desktop versions of Chrome, Firefox and Safari (March 2021)
 
 ## Challenges
+
+**Challenge**: In Firefox, the placeholder text in the search input field did not have the right styling.
+
+**Solution**: Usage of --webkit-- and --moz--
 
 ## Demo
 
