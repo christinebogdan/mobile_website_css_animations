@@ -1,5 +1,11 @@
 # Ohmyfood | Online Food Delivery
 
+## Developed Skills
+
+- Develop a navigation structure for a website
+- Implement design effects using CSS & SCSS
+- Ensure design consistency on a website
+
 ## Description
 
 Ohmyfood is an online food ordering website. Their concept allows users to compose their
@@ -56,12 +62,6 @@ The project objectives for the animation can be divided into **three parts**:
 ## Challenges & Achievements
 
 - build custom loading spinner
-
-## Acquired Skills
-
-- Develop a navigation structure for a website
-- Implement design effects using CSS & SCSS
-- Ensure design consistency on a website
 
 ## Demo
 
